@@ -9,6 +9,11 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= render 'books/index',books: @books %>
+      <% @favorite_books.each do |book| %>
+      <hr>
+      <p><span>いいねした本の内容: </span><%= link_to book.body, book_path(book.id) %></p>
+      <% end %>
+      <td><%= link_to "#{book.book_comments.count}コメント",book_path(book.id) %></td>
     </div>
   </div>
 </div>
