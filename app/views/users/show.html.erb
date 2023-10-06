@@ -7,8 +7,6 @@
       <%= render 'books/form', book: @book %>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <p><%=link_to "フォロー", user_followeds_path(@user.id) %></p>
-      <p><%=link_to "フォロワー", user_followers_path(@user.id) %></p>
       <% if current_user != @user %>
         <% if current_user.followed_by?(@user) %>
         <p><%= link_to "フォロー済み",user_relationships_path(@user.id),method: :delete %></p>
